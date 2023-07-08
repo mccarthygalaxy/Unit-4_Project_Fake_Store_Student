@@ -1,3 +1,17 @@
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.navbar {
+    padding: 10px 100px;
+    background-color: rgb(215, 215, 215);
+}
+
+.navbar-expand-lg {
+    margin-bottom: 3em;
+}
+
 .fixed-bottom {
     text-align: center;
     color: white;
@@ -22,14 +36,25 @@
     border-radius: 15px;
 }
 
-.container {
+.nav-item {
+    padding: 10px;
+}
+
+.heroContainer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+#displayContainer {
+    padding: 0 1rem;
+    margin: 1rem;
+
+}
+
 .card {
     text-align: center;
+    margin: 0.2rem;
 }
 
 .btn-primary {

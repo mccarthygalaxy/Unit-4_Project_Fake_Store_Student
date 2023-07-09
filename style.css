@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    padding-bottom: 15em;
     overflow-x: hidden;
     height: 100vh;
     width: 100vw;
@@ -56,7 +57,7 @@ body {
 }
 
 #displayContainer {
-    padding: 0 1rem;
+    padding: 0 1rem 7rem 1rem;
     margin: 2rem;
 }
 
@@ -74,10 +75,12 @@ body {
 
 /* ------------- FOOTER ------------- */
 .fixed-bottom {
+    height: 5em;
     text-align: center;
     color: white;
     background-color: black;
     font-weight: 400;
+    padding-top: 0.9em;
 }
 
 .blockquote-footer {

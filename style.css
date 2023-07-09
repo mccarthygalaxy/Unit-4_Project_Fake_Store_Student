@@ -1,21 +1,82 @@
 body {
     margin: 0;
+    overflow-x: hidden;
     height: 100vh;
+    width: 100vw;
+    background-image: url('https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');
+    background-size: cover;
+}
+
+/* ------------- HEADER/NAVIGATION ------------- */
+#storeLOGO {
+    margin: 0 40px 0 0;
+    color: rgb(255, 132, 83);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300;
+    font-size: 1.9em;
+    text-shadow: 2px 2px 3px black;
 }
 
 .navbar {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    margin: 0;
+    z-index: 1;
     padding: 10px 100px;
     background-color: rgb(215, 215, 215);
+    box-shadow: 2px 2px 12px 2px rgb(153, 153, 153);
+}
+
+.navbar-nav {
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .navbar-expand-lg {
     margin-bottom: 3em;
 }
 
+.navbar-brand  {
+    color: white;
+    background-color: rgb(255, 132, 83);
+    padding: 0.5em;
+    border-radius: 10px;
+}
+
+.nav-item {
+    padding: 10px;
+}
+
+/* ------------- DISPLAY ------------- */
+.heroContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#displayContainer {
+    padding: 0 1rem;
+    margin: 2rem;
+}
+
+/* ------------- CARD STYLING ------------- */
+.card {
+    text-align: center;
+    margin: 0.2rem;
+}
+
+.btn-primary {
+    background-color: rgb(255, 132, 83);
+    border: 0;
+    border-radius: 14;
+}
+
+/* ------------- FOOTER ------------- */
 .fixed-bottom {
     text-align: center;
     color: white;
-    background-color: rgb(255, 132, 83);
+    background-color: black;
     font-weight: 400;
 }
 
@@ -27,37 +88,4 @@ body {
 
 .blockquote-footer > cite {
     text-transform: uppercase;
-}
-
-.navbar-brand  {
-    color: white;
-    background-color: rgb(255, 132, 83);
-    padding: 0.5em;
-    border-radius: 15px;
-}
-
-.nav-item {
-    padding: 10px;
-}
-
-.heroContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#displayContainer {
-    padding: 0 1rem;
-    margin: 1rem;
-
-}
-
-.card {
-    text-align: center;
-    margin: 0.2rem;
-}
-
-.btn-primary {
-    background-color: rgb(255, 132, 83);
-    border: 0px;
 }

@@ -21,52 +21,58 @@ const catElectronics = document.getElementById('catElectronics');
 const catMens = document.getElementById('catMens');
 const catWomens = document.getElementById('catWomens');
 
-const heroContainer = document.querySelector('.heroContainer');
+// const heroContainer = document.querySelector('.heroContainer');
+const displayContainer = document.querySelector('.displayContainer');
 
 
 //! Anonymous Functions
 
-const displayFirstCard = item => {
-    console.log(item);
+const displayCards = items => {
+    const displayContainer = document.getElementById('displayContainer');
+    displayContainer.innerHTML = ''; // Clear the existing content
 
-    //* Create Elements
-    let card = document.createElement('div');
-    let img = document.createElement('img');
-    let body = document.createElement('div');
-    let title = document.createElement('h5');
-    let description = document.createElement('p');
-    let price = document.createElement('h5');
-    let btn = document.createElement('btn');
+    items.forEach(item => {
+        // Create card elements
+        const col = document.createElement('div')
+        const card = document.createElement('div');
+        const img = document.createElement('img');
+        const body = document.createElement('div');
+        const title = document.createElement('h5');
+        const description = document.createElement('p');
+        const price = document.createElement('h5');
+        const btn = document.createElement('a');
 
-    //* Set Attributes
-    card.className = 'card';
-    card.style.width = '18rem';
-    img.src = item.img;
-    img.className = 'card-img-top';
-    img.alt = item.title;
-    img.title = item.title;
-    description.className = 'card-text';
+        // Set attributes and content for the card elements
+        col.className = 'col';
+        card.className = 'card';
+        img.src = item.img;
+        img.className = 'card-img-top mx-auto custom-image';
+        img.alt = item.title;
+        body.className = 'card-body';
+        title.className = 'card-title';
+        title.textContent = item.title;
+        description.className = 'card-text';
+        description.textContent = item.desc;
+        price.textContent = 'Price: $' + item.price;
+        btn.className = 'btn btn-primary';
+        btn.textContent = 'Add To Cart';
+        btn.href = '#';
 
-    // img.style.height = "100px";
+        // Append the card elements to the display container
+        body.appendChild(title);
+        body.appendChild(description);
+        body.appendChild(price);
+        body.appendChild(btn);
 
-    body.className = 'card-body';
-    title.textContent = item.title;
-    description.textContent = item.desc;
-    price.className = 'card-price';
-    btn.className = 'btn btn-primary';
-    btn.textContent = 'Add To Cart';
+        card.appendChild(img);
+        card.appendChild(body);
 
-    //* Attach/Append Elements
-    body.appendChild(title);
-    body.appendChild(description);
-    body.appendChild(btn);
-    
-    card.appendChild(img);
-    card.appendChild(body);
+        col.appendChild(card);
 
-    heroContainer.appendChild(card);
 
-}
+        displayContainer.appendChild(col);
+    });
+};
 
 //! Listening Events
 
@@ -95,20 +101,15 @@ function fakeStore(endpoint) {  // FakeStore Function
     fetch(baseURL + endpoint)
         .then((res) => res.json())
         .then((data) => {           // Process the fetched items data
-            // console.log(data);
-            let singleItem = data[0];
-            // console.log(singleItem);
+            let eachObj = data.map((item) => ({
+                title: item.title,
+                desc: item.description,
+                price: item.price,
+                img: item.image,
+                category: item.category
+            }));
 
-            let singleObj = {
-                title: singleItem.title,
-                desc: singleItem.description,
-                price: singleItem.price,
-                img: singleItem.image,
-                category: singleItem.category
-            }
-            // console.log(singleObj);
-
-            displayFirstCard(singleObj);
+            displayCards(eachObj);
         })
         .catch((err) => {
             console.error('Error:', err);

@@ -4,17 +4,17 @@ body {
     overflow-x: hidden;
     height: 100vh;
     width: 100vw;
-    /* background-image: url('https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');
-    background-size: cover; */
+    background-image: url('https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');
+    background-size: cover;
 }
 
 /* ------------- HEADER/NAVIGATION ------------- */
 #storeLOGO {
-    margin: 0 40px 0 0;
+    margin: 0 70px 0 0;
     color: rgb(255, 132, 83);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 300;
-    font-size: 1.9em;
+    font-size: 2.1em;
     text-shadow: 2px 2px 3px black;
 }
 
@@ -69,6 +69,7 @@ body {
     /* display: flex; */
     text-align: center;
     margin: 0.2rem;
+    padding: 0 1rem 1rem 1rem;
     background-color: white;
     border-radius: 12px;
     /* display: grid; */
